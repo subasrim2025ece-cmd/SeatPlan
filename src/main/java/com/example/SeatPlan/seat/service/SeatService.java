@@ -1,4 +1,5 @@
-package com.example.SeatPlan.seat.service;
+
+        package com.example.SeatPlan.seat.service;
 
 import com.example.SeatPlan.seat.entity.Seat;
 import com.example.SeatPlan.seat.repository.SeatRepository;
@@ -25,23 +26,52 @@ public class SeatService {
 
     public Seat getSeatById(Long id) {
         return seatRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Seat not found"));
+                .orElseThrow(() ->
+                        new RuntimeException(
+                                "Seat not found with ID: " + id
+                        )
+                );
+    }
+
+    public List<Seat> getSeatsByHall(Long hallId) {
+        return seatRepository.findByHallId(hallId);
     }
 
     public Seat updateSeat(Long id, Seat seat) {
 
         Seat existingSeat = getSeatById(id);
 
-        existingSeat.setSeatNumber(seat.getSeatNumber());
-        existingSeat.setRowNumber(seat.getRowNumber());
-        existingSeat.setColumnNumber(seat.getColumnNumber());
-        existingSeat.setStatus(seat.getStatus());
-        existingSeat.setHallId(seat.getHallId());
+        existingSeat.setSeatNumber(
+                seat.getSeatNumber()
+        );
+
+        existingSeat.setRowNumber(
+                seat.getRowNumber()
+        );
+
+        existingSeat.setColumnNumber(
+                seat.getColumnNumber()
+        );
+
+        existingSeat.setStatus(
+                seat.getStatus()
+        );
+
+        existingSeat.setHallId(
+                seat.getHallId()
+        );
 
         return seatRepository.save(existingSeat);
     }
 
     public void deleteSeat(Long id) {
+
+        if (!seatRepository.existsById(id)) {
+            throw new RuntimeException(
+                    "Seat not found with ID: " + id
+            );
+        }
+
         seatRepository.deleteById(id);
     }
 }

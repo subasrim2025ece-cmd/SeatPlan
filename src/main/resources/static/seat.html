@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    ```
+    <title>Seat Management - Examination Seat Allocation</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    ```
+
+</head>
+
+<body>
+
+<div class="container">
+
+    ```
+    <h1>Seat Management</h1>
+
+    <p>Examination Seat Allocation</p>
+
+    <!-- CREATE SEAT -->
+
+    <h2>Create Seat</h2>
+
+    <form id="seatForm">
+
+        <label for="seatNumber">Seat Number</label>
+        <input
+                type="text"
+                id="seatNumber"
+                placeholder="Example: A1"
+                required>
+
+
+        <label for="rowNumber">Row Number</label>
+        <input
+                type="number"
+                id="rowNumber"
+                placeholder="Example: 1"
+                required>
+
+
+        <label for="columnNumber">Column Number</label>
+        <input
+                type="number"
+                id="columnNumber"
+                placeholder="Example: 1"
+                required>
+
+
+        <label for="hallId">Hall ID</label>
+        <input
+                type="number"
+                id="hallId"
+                placeholder="Example: 1"
+                required>
+
+
+        <label for="status">Status</label>
+        <select id="status" required>
+
+            <option value="">Select Status</option>
+            <option value="AVAILABLE">AVAILABLE</option>
+            <option value="BOOKED">BOOKED</option>
+
+        </select>
+
+
+        <button type="submit">
+            Create Seat
+        </button>
+
+    </form>
+
+
+    <div id="message"></div>
+
+
+    <!-- SEAT LIST -->
+
+    <h2>Seat Details</h2>
+
+    <button type="button" id="loadSeats">
+        View All Seats
+    </button>
+
+
+    <table>
+
+        <thead>
+
+        <tr>
+            <th>Seat ID</th>
+            <th>Seat Number</th>
+            <th>Hall ID</th>
+            <th>Row</th>
+            <th>Column</th>
+            <th>Status</th>
+        </tr>
+
+        </thead>
+
+        <tbody id="seatTableBody">
+
+        </tbody>
+
+    </table>
+    ```
+
+</div>
+
+<script src="js/common.js"></script>
+
+<script src="js/seat.js"></script>
+
+</body>
+
+</html>

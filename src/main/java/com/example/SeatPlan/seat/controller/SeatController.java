@@ -31,10 +31,16 @@ public class SeatController {
         return seatService.getSeatById(id);
     }
 
+    @GetMapping("/hall/{hallId}")
+    public List<Seat> getSeatsByHall(@PathVariable Long hallId) {
+        return seatService.getSeatsByHall(hallId);
+    }
+
     @PutMapping("/{id}")
     public Seat updateSeat(
             @PathVariable Long id,
             @RequestBody Seat seat) {
+
         return seatService.updateSeat(id, seat);
     }
 

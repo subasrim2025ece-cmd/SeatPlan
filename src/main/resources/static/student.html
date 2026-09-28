@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students - SeatPlan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h1>SeatPlan</h1>
+    <div>
+        <a href="index.html">Dashboard</a>
+        <a href="student.html">Students</a>
+        <a href="hall.html">Halls</a>
+        <a href="booking.html">Booking</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h2>Student Registration</h2>
+
+    <div class="form-card">
+
+        <input type="text" id="studentName" placeholder="Student Name">
+
+        <input type="text" id="registerNumber" placeholder="Register Number">
+
+        <input type="text" id="department" placeholder="Department">
+
+        <input type="text" id="className" placeholder="Class">
+
+        <input type="text" id="section" placeholder="Section">
+
+        <button onclick="createStudent()">Register Student</button>
+
+        <p id="studentMessage"></p>
+
+    </div>
+
+    <h2>Registered Students</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Register Number</th>
+            <th>Department</th>
+            <th>Class</th>
+            <th>Section</th>
+        </tr>
+        </thead>
+
+        <tbody id="studentTableBody">
+        </tbody>
+    </table>
+
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/student.js"></script>
+
+</body>
+</html>

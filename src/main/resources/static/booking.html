@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - SeatPlan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h1>SeatPlan</h1>
+
+    <div>
+        <a href="index.html">Dashboard</a>
+        <a href="student.html">Students</a>
+        <a href="hall.html">Halls</a>
+        <a href="booking.html">Booking</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h2>Automatic Seat Allocation</h2>
+
+    <div class="form-card">
+
+        <label>Student ID</label>
+
+        <input
+                type="number"
+                id="studentId"
+                placeholder="Enter Student ID">
+
+        <label>Hall ID</label>
+
+        <input
+                type="number"
+                id="hallId"
+                placeholder="Enter Hall ID">
+
+        <button onclick="createBooking()">
+            Allocate Seat
+        </button>
+
+        <p id="bookingMessage"></p>
+
+    </div>
+
+    <div id="bookingResult"></div>
+
+    <h2>All Bookings</h2>
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Student ID</th>
+            <th>Hall ID</th>
+            <th>Seat ID</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+
+        <tbody id="bookingTableBody">
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/booking.js"></script>
+
+</body>
+</html>
